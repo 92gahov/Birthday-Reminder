@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const validator = require('validator');
 
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.SECRET, { expiresIn: '30d' })
+    return jwt.sign({ id }, process.env.SECRET, { expiresIn: '10d' })
 };
 
 const signupUser = async (req, res) => {

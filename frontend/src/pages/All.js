@@ -82,7 +82,7 @@ const All = () => {
             </div>
             {
                 isLoading ? <Loader /> :
-                    birthdays.length === 0 ? <p className='empty'>No celebration yet!</p> :
+                    birthdays.length === 0 ? <p className='empty'>No celebrations yet!</p> :
                         <section className='output-main'>
                             {
                                 birthdays.filter((birthday) => {
