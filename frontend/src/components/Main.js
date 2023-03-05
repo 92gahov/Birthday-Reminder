@@ -7,6 +7,7 @@ import Signup from '../pages/Signup';
 import New from '../pages/New';
 import All from '../pages/All';
 import { AuthContext } from '../context/authContext';
+import NotFound from '../pages/NotFound';
 
 const Main = () => {
 
@@ -22,7 +23,7 @@ const Main = () => {
                     <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
                     <Route path='/new' element={user ? <New /> : <Navigate to="/login" />} />
                     <Route path='/all' element={user ? <All /> : <Navigate to="/login" />} />
-                    <Route path='*' element={user ? <Home /> : <Navigate to="/login" />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
         </>
