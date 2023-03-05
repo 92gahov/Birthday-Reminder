@@ -17,12 +17,29 @@ const Main = () => {
             <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
+                    {/* <Route path='/' element={user ? <Home /> : <Navigate to='/login' />} />
                     <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
                     <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
                     <Route path='/new' element={user ? <New /> : <Navigate to="/login" />} />
                     <Route path='/all' element={user ? <All /> : <Navigate to="/login" />} />
-                    <Route path='*' element={user ? <Home /> : <Navigate to="/login" />} />
+                    <Route path='*' element={user ? <Home /> : <Navigate to="/login" />} /> */}
+                    {
+                        user && (
+                            <>
+                                <Route path='/' element={<Home />} />
+                                <Route path='/new' element={<New />} />
+                                <Route path='/all' element={<All />} />
+                            </>
+                        )
+                    }
+                    {
+                        !user && (
+                            <>
+                                <Route path='/login' element={<Login />} />
+                                <Route path='/signup' element={<Signup />} />
+                            </>
+                        )
+                    }
                 </Routes>
             </BrowserRouter>
         </>
