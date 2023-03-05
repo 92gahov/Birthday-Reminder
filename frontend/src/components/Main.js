@@ -22,6 +22,7 @@ const Main = () => {
                     <Route path='/signup' element={!user ? <Signup /> : <Navigate to="/" />} />
                     <Route path='/new' element={user ? <New /> : <Navigate to="/login" />} />
                     <Route path='/all' element={user ? <All /> : <Navigate to="/login" />} />
+                    <Route path='*' element={user ? <Home /> : <Navigate to="/logn" />} />
                 </Routes>
             </BrowserRouter>
         </>
